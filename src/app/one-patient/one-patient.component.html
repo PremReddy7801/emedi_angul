@@ -1,0 +1,35 @@
+<h3>{{patient.fullName}} details</h3>
+
+<ul>
+    <li>patient id :{{patient.patientId}}</li>
+    <li>first name :{{patient.firstName}}</li>
+    <li>last name :{{patient.lastName}}</li>
+    <li>phone number :{{patient.phoneNumber}}</li>
+    <li>age :{{patient.age}}</li>
+    <li>gender :{{patient.gender}}</li>
+    <li>status :{{patient.status}}</li>
+    <li>createdDate :{{patient.createdDate}}</li>
+    <li>createdBy :{{patient.createdBy}}</li>
+</ul>
+<h3>visits :</h3>
+<table border="1">
+    <tr>
+        <th>patientId</th>
+        <th>visitId</th>
+        <th>status</th>
+        <th>createdDate</th>
+        <th>createdBy</th>
+        <th>updatedBy</th>
+    </tr >
+    <tr *ngFor="let visit of patient.visits">
+        <td>{{visit.patientId}}</td>
+        <td>{{visit.visitId}}</td>
+        <td>{{visit.status}}</td>
+        <td>{{visit.createdDate}}</td>
+        <td>{{visit.createdBy}}</td>
+        <td>{{visit.updatedBy}}</td>
+    </tr>
+</table>
+<button type="button" (click)="deletePatient(patient.patientId)">delete patient</button>
+<button type="button" (click)="updatePatient(patient.patientId)"> update Student</button>
+<button type="button" (click)="goToAllPatients()">all patients</button>

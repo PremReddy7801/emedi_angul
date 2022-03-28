@@ -1,0 +1,43 @@
+<h1>patients list </h1>
+<table border="1">
+    <tr>
+        <th>patient id</th>
+        <th>first name</th>
+        <th>last name</th>
+        <th>phone number</th>
+        <th>age</th>
+        <th>gender</th>
+        <th>status</th>
+        <th>createdDate</th>
+        <th>createdBy</th>
+      
+
+    </tr>
+    <tr *ngFor="let patient of patients">
+        <td (click)="goToPatient(patient.patientId)">{{patient.patientId}}</td>
+        <td>{{patient.firstName}}</td>
+        <td>{{patient.lastName}}</td>
+        <td>{{patient.phoneNumber}}</td>
+        <td>{{patient.age}}</td>
+        <td>{{patient.gender}}</td>
+        <td>{{patient.status}}</td>
+        <td>{{patient.createdDate}}</td>
+        <td>{{patient.createdBy}}</td>
+    </tr>
+</table>
+
+<button type="button" (click)="addPatient()">add patient</button>
+<!-- <h3>vistis:</h3>
+<table border="1">
+    <tr>
+        <th>visitId</th>
+        <th>patientId</th>
+        <th>status</th>
+        <th>createdDate</th>
+        <th>createdBy</th>
+        <th>updatedBy</th>
+    </tr >
+    <tr *ngFor="let visit of patients.visits">
+
+    </tr>
+</table> -->

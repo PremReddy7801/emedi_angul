@@ -1,0 +1,25 @@
+<p>{{patient.fullName}} profile</p>
+
+<form (ngSubmit)="updatePatient()">
+    <label for="firstName" >first name : </label>
+    <input type="text" name="firstName" placeholder="first name"  [(ngModel)] ="patient.firstName"> <br>
+    <label for="lastName" >last name : </label>
+    <input type="text" name="lastName" placeholder="last name"  [(ngModel)]="patient.lastName" class="form-control"> <br>
+    <label for="phoneNumber" >phone number : </label>
+    <input type="text" name="phoneNumber" placeholder="phone number"  [(ngModel)]="patient.phoneNumber" > <br>
+    <label for="age" >age : </label>
+    <input type="number" name="age" placeholder="age"   [(ngModel)]="patient.age"> <br>
+    <label for="gender" >gender : </label>
+    male :<input type="radio" name="gender" placeholder="gender"  value="m" [(ngModel)]="patient.gender" class="form-control" checked="">
+    female :<input type="radio" name="gender" placeholder="gender"  value="f" [(ngModel)]="patient.gender" class="form-control" checked="">
+    other :<input type="radio" name="gender" placeholder="gender"  value="o" [(ngModel)]="patient.gender" class="form-control" checked=""> <br>
+    <label for="status" >status : </label>
+    <input type="number" name="status" placeholder="status"  [(ngModel)]="patient.status" class="form-control"> <br>
+    <label for="createdDate" >created date : </label>
+    <input type="date" name="createdDate" placeholder="created date"  [(ngModel)]="patient.createdDate"> <br>
+    <label for="createdBy" >created by : </label>
+    <input type="text" name="createdBy" placeholder="created by"  [(ngModel)]="patient.createdBy" > <br>
+    <label for="updatedBy" >updated by : </label>
+    <input type="text" name="updatedBy" placeholder="updated by"  [(ngModel)]="patient.updatedBy" > <br>
+    <button type="submit">submit</button>
+</form>

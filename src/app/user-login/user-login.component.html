@@ -1,0 +1,8 @@
+<form (ngSubmit)="login()">
+    <label for="username">username </label>
+    <input type="text" name="username" id="username" required="" [(ngModel)]="username"> <br>
+    <label for="password">password </label>
+    <input type="text" name="password" id="password" required="" [(ngModel)]="password"> <br>
+    <button type="submit">login</button>
+</form>
+<input type="button" (click) ="forgotPassword()" value="forgot password">

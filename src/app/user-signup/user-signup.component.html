@@ -1,0 +1,21 @@
+<form >
+    <label for="name">full name :</label>
+    <input type="text" name="name" id="name" placeholder="full name" required="" class="form-control" [(ngModel)]="frontDesk.name">  <br>
+    <label for="username">username :</label>
+    <input type="text" name="username" id="username" placeholder="username" required="" class="form-control" [(ngModel)]="frontDesk.username"> <br>
+    <label for="password">password :</label>
+    <input type="text" name="password" id="password" placeholder="password" required="" class="form-control" [(ngModel)]="frontDesk.password"> <br>
+    <label for="phoneNumber">phoneNumber :</label>
+    <input type="text" name="phoneNumber" id="phoneNumber" placeholder="phoneNumber" required="" class="form-control" [(ngModel)]="frontDesk.phoneNumber"> <br>
+    <label for="email">email :</label>
+    <input type="text" name="email" id="email" placeholder="email" required="" class="form-control" [(ngModel)]="frontDesk.email"> <br>
+
+    <ul>
+        <label for="roles">roles :</label>
+        <li *ngFor="let role of roles">
+          <input type="checkbox"name="isAccepted" id="roles" placeholder="roles" required="" class="form-control" [(ngModel)]="role.checked" />
+          <label>{{role.name}}</label>
+        </li>
+    </ul>
+    <button type="submit" (click)="signUp()">singnUp</button>
+</form>

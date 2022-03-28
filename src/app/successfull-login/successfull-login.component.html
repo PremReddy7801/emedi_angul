@@ -1,0 +1,24 @@
+<p>successfull-login works!</p>
+<h1>Well come to Emedi project</h1>
+<nav>
+    <ul>
+        <li> <a routerLink="/getallpatients">All Patients</a> </li>
+        <li> <a routerLink="/addpatient">Add patient</a> </li>
+    </ul>
+</nav>
+<button type="button" (click)="search()">search</button>
+
+<div *ngIf="condition">
+    <form (ngSubmit)="searchPatientId()">
+    <label for="phoneNumber">phoneNumber</label>
+<input type="text" name="phoneNumber" id="phoneNumber" [(ngModel)]="phoneNumber">  <br>
+    <label for="firstName">firstName</label>
+<input type="text" name="firstName" id="firstName" [(ngModel)]="firstName"> <br>
+    <label for="lastName">lastName</label>
+<input type="text" name="lastName" id="lastName" [(ngModel)]="lastName"> <br>
+<button type="submit"> submit</button>
+</form>
+</div>
+
+
+
