@@ -7,7 +7,7 @@ app.use(express.static(__dirname + '/emedi-application'));
 
 app.get('/*', function(req,res) {
     
-res.sendFile(path.join(__dirname+'/emedi-application/index.html'));
+res.sendFile(path.join(__dirname, 'emedi-application', 'index.html'));
 });
 
 app.listen(process.env.PORT || 3000, function(){
