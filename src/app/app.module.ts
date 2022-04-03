@@ -18,6 +18,8 @@ import { OnePatientComponent } from './one-patient/one-patient.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserSignupComponent } from './user-signup/user-signup.component';
 import { SuccessfullLoginComponent } from './successfull-login/successfull-login.component';
+import { FogotPasswordComponent } from './fogot-password/fogot-password.component';
+import { UpdatePasswordComponent } from './update-password/update-password.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { SuccessfullLoginComponent } from './successfull-login/successfull-login
     OnePatientComponent,
     UserLoginComponent,
     UserSignupComponent,
-    SuccessfullLoginComponent
+    SuccessfullLoginComponent,
+    FogotPasswordComponent,
+    UpdatePasswordComponent
     
     
   ],

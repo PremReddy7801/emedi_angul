@@ -3,9 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddpatientComponent } from './addpatient/addpatient.component';
 import { DeletePatientComponent } from './delete-patient/delete-patient.component';
 import { FileNotFoundComponentComponent } from './file-not-found-component/file-not-found-component.component';
+import { FogotPasswordComponent } from './fogot-password/fogot-password.component';
 import { OnePatientComponent } from './one-patient/one-patient.component';
 import { PatientslistComponent } from './patientslist/patientslist.component';
 import { SuccessfullLoginComponent } from './successfull-login/successfull-login.component';
+import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { UpdatePatientComponent } from './update-patient/update-patient.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserSignupComponent } from './user-signup/user-signup.component';
@@ -21,9 +23,12 @@ const routes: Routes = [
   {path:'deletepatient/:patientId',component:DeletePatientComponent},
   {path:'signup',component:UserSignupComponent},
   {path:'login',component:UserLoginComponent},
+  {path:'forgotPassword',component:FogotPasswordComponent},
+  {path:'updatePassword',component:UpdatePasswordComponent},
   {path:'loginSuccess',component:SuccessfullLoginComponent},
   {path:'',redirectTo:'wellcome',pathMatch:'full'},
-  {path:'**',component:FileNotFoundComponentComponent},
+  {path:'**',component:FileNotFoundComponentComponent}
+
 ];
 
 @NgModule({

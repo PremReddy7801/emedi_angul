@@ -7,10 +7,16 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./delete-patient.component.css']
 })
 export class DeletePatientComponent implements OnInit {
-
+  patientId:string;
   constructor(private service:PatientsServiceService, private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.patientId = this.route.snapshot.params["patientId"];
+    this.service.deletePatient(this.patientId).subscribe(data=>data);
+    alert("patient deleted successfully")
+    this.goToAllPatients();
   }
-
+  goToAllPatients(){
+    this.router.navigate(["/getallpatients"])
+  }
 }

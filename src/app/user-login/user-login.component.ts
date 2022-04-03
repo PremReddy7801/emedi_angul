@@ -8,9 +8,9 @@ import { PatientsServiceService } from '../patients-service.service';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent implements OnInit {
-  username:string="puri";
-  password:string="1234";
-  token:string;
+  username:string="";
+  password:string="";
+  token:string ="";
   constructor(private service:PatientsServiceService, private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -20,16 +20,26 @@ export class UserLoginComponent implements OnInit {
     console.log(this.username,this.password);
     
     this.service.login(this.username,this.password).subscribe(data=>{
-      //  this.token = data.headers.get('accesstoken'); 
+      console.log("dataaaaaaaa :"+data.accessToken)
+       this.token = data.accessToken;
     });
-    console.log(this.token);
-    this.successfullLogin();
-
-}
-successfullLogin(){
-      this.router.navigate(["/loginSuccess"])
+    
+    if(this.token.length<2){
+      // this.successfullLogin();
+      // this.successfullLogin();
+      this.router.navigate(["/login"])
+    }else {
+    this.router.navigate(["/loginSuccess"])
+  }
+    
+  }
+  successfullLogin(){
+    console.log("this tokemn :"+this.token);
+    
 }
 forgotPassword(){
-
+  console.log("forgot password");
+  
+this.router.navigate(["/forgotPassword"])
 }
 }

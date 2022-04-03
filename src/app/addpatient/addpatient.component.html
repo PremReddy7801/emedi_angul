@@ -1,35 +1,82 @@
-<h3 style="text-align: center ; color: rgb(127, 255, 212);">add patient</h3>
-<p></p>
-<p></p>
+
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title> Login Page </title>  
+<style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: pink;  
+}  
+button {   
+       background-color: #4CAF50;   
+       width: 100%;  
+        color: orange;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        border: 3px solid #f1f1f1;   
+    }   
+ input[type=text], input[type=password] {   
+        width: 100%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+    }  
+ button:hover {   
+        opacity: 0.7;   
+    }   
+  .cancelbtn {   
+        width: auto;   
+        padding: 10px 18px;  
+        margin: 10px 5px;  
+    }   
+        
+     
+ .container {   
+        padding: 25px;   
+        background-color: lightblue;  
+    }   
+</style>   
+</head>    
+<body>    
+    <h1 style="text-align: center;"> add patient</h1>  
+    <div class="container">   
+        <form>
+            <label for="firstName" >first name : </label>
+        <input type="text" name="firstName" placeholder="first name" required="" [(ngModel)] ="patient.firstName"> <br>
+        <label for="lastName" >last name : </label>
+        <input type="text" name="lastName" placeholder="last name" required="" [(ngModel)]="patient.lastName" class="form-control"> <br>
+        <label for="phoneNumber" >phone number : </label>
+        <input type="text" name="phoneNumber" placeholder="phone number" required="" [(ngModel)]="patient.phoneNumber" class="form-control"> <br>
+        <label for="age" >age : </label>
+        <input type="number" name="age" placeholder="age" required="" value=""> <br>
+        <label for="gender" >gender : </label>
+        male :<input type="radio" name="gender" placeholder="gender" required="" value="m" [(ngModel)]="patient.gender" class="form-control">
+        female :<input type="radio" name="gender" placeholder="gender" required="" value="f" [(ngModel)]="patient.gender" class="form-control">
+        other :<input type="radio" name="gender" placeholder="gender" required="" value="o" [(ngModel)]="patient.gender" class="form-control" checked=""> <br>
+        <label for="status" >status : </label>
+        <input type="number" name="status" placeholder="status" required="" [(ngModel)]="patient.status" class="form-control"> <br>
+        <label for="createdDate" >created date : </label>
+        <input type="date" name="createdDate" placeholder="created date" required="" [(ngModel)]="patient.createdDate"> <br>
+        <label for="createdBy" >created by : </label>
+        <input type="text" name="createdBy" placeholder="created by" required="" [(ngModel)]="patient.createdBy" > <br>
+        <label for="updatedBy" >updated by : </label>
+        <input type="text" name="updatedBy" placeholder="updated by" required="" [(ngModel)]="patient.updatedBy" > <br>
+        
+        <button type="submit" (click) = "savePatient()">Submit</button>
+        </form>
+        
+    </div>   
+</body>     
+</html>  
 
 
-    <form>
-    <label for="firstName" >first name : </label>
-<input type="text" name="firstName" placeholder="first name" required="" [(ngModel)] ="patient.firstName"> <br>
-<label for="lastName" >last name : </label>
-<input type="text" name="lastName" placeholder="last name" required="" [(ngModel)]="patient.lastName" class="form-control"> <br>
-<label for="phoneNumber" >phone number : </label>
-<input type="text" name="phoneNumber" placeholder="phone number" required="" [(ngModel)]="patient.phoneNumber" class="form-control"> <br>
-<label for="age" >age : </label>
-<input type="number" name="age" placeholder="age" required="" value=""> <br>
-<label for="gender" >gender : </label>
-male :<input type="radio" name="gender" placeholder="gender" required="" value="m" [(ngModel)]="patient.gender" class="form-control">
-female :<input type="radio" name="gender" placeholder="gender" required="" value="f" [(ngModel)]="patient.gender" class="form-control">
-other :<input type="radio" name="gender" placeholder="gender" required="" value="o" [(ngModel)]="patient.gender" class="form-control" checked=""> <br>
-<label for="status" >status : </label>
-<input type="number" name="status" placeholder="status" required="" [(ngModel)]="patient.status" class="form-control"> <br>
-<label for="createdDate" >created date : </label>
-<input type="date" name="createdDate" placeholder="created date" required="" [(ngModel)]="patient.createdDate"> <br>
-<label for="createdBy" >created by : </label>
-<input type="text" name="createdBy" placeholder="created by" required="" [(ngModel)]="patient.createdBy" > <br>
-<label for="updatedBy" >updated by : </label>
-<input type="text" name="updatedBy" placeholder="updated by" required="" [(ngModel)]="patient.updatedBy" > <br>
 
-<button type="submit" (click) = "savePatient()">Submit</button>
-</form>
-
-
-<h3>result</h3>
-<p>{{patien| json}}</p>
 
 

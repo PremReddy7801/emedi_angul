@@ -14,18 +14,20 @@ export class PatientsServiceService {
   token:String="";
   tokens:Tokens= new Tokens();
 
-  // private PatientsBaseUrl:string = 'http://localhost:8090/medi/patient';
-  // private frontDeskBaseUrl:string = 'http://localhost:8090/emedi/frontdesk';
-  private PatientsBaseUrl:string = 'https://emedi.herokuapp.com/medi/patient';
-  private frontDeskBaseUrl:string = 'https://emedi.herokuapp.com/emedi/frontdesk';
+  private PatientsBaseUrl:string = 'http://localhost:8090/medi/patient';
+  private frontDeskBaseUrl:string = 'http://localhost:8090/emedi/frontdesk';
+  // private PatientsBaseUrl:string = 'https://emedi.herokuapp.com/medi/patient';
+  // private frontDeskBaseUrl:string = 'https://emedi.herokuapp.com/emedi/frontdesk';
   private getallUrl:string = this.PatientsBaseUrl+'/get-all-patients'
   private getOnePatientlUrl:string = this.PatientsBaseUrl+'/get-patient-by-id/'
-  private postUrl:string =this.PatientsBaseUrl+'/add-with-visits'
+  private postUrl:string =this.PatientsBaseUrl+'/add-patient'
   private updateUrl:string =this.PatientsBaseUrl+'/update-patient'
-  private deleteUrl:string =this.PatientsBaseUrl+'/update-patient/'
+  private deleteUrl:string =this.PatientsBaseUrl+'/delete-patient/'
   private searchPatientIdul:string=this.PatientsBaseUrl+'/get-patientid-by-phone-name'
   private loginUrl:string = this.frontDeskBaseUrl+'/login';
   private signUpnUrl:string = this.frontDeskBaseUrl+'/signup';
+  private forgotPasswordUrl:string = this.frontDeskBaseUrl+'/password/';
+  private updatetPasswordUrl:string = this.frontDeskBaseUrl+'/user/updatepassword/';
  
   constructor(private http: HttpClient) { }
   options = {
@@ -69,7 +71,7 @@ export class PatientsServiceService {
     let options = {
       headers: new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', 'Bearer ' + this.token)   
   };
-    return this.http.delete<number>(this.deleteUrl+"/"+patientId,options).pipe(map(data=>data,catchError(this.handleError)))
+    return this.http.delete<number>(this.deleteUrl+"?patientId="+patientId,options).pipe(map(data=>data,catchError(this.handleError)))
   }
   searchPatientId(firstName:string,lastName:string,phoneNumber:string){
     let options = {
@@ -93,6 +95,7 @@ export class PatientsServiceService {
           console.log((this.tokens)+"token classsssssssssss");
           this.token=data.accessToken;
           console.log(this.token);
+          return data;
           
           
         },catchError(this.handleError)))
@@ -102,9 +105,16 @@ export class PatientsServiceService {
     
     return this.http.post<FrontDesk>(this.signUpnUrl,frontDesk).pipe(map(data=>data,catchError(this.handleError)))
   }
+  forgotPassword(gmail:string){
+    return this.http.get(this.forgotPasswordUrl+"?email="+gmail).pipe(data=>data,catchError(this.handleError));
+  }
+  updatePassword(email:string,password:string){
+    return this.http.get(this.updatetPasswordUrl+"?email="+email+"&password="+password).pipe(data=>data,catchError(this.handleError));
+  }
   private handleError(res: HttpErrorResponse | any) {
     console.error(res.error || res.body.error);
     return observableThrowError(res.error || 'Server error');
   }
+  
 
 }

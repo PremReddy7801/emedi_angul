@@ -31,8 +31,8 @@ updatePatient(patientId:string){
   this.router.navigate(["/updatepatient",patientId])
   
 }
-goToAllPatients(){
-  this.router.navigate(["/getallpatients"])
-}
+  goToAllPatients(){
+    this.router.navigate(["/getallpatients"])
+  }
 
 }

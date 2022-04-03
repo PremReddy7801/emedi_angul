@@ -1,35 +1,103 @@
-<h3>{{patient.fullName}} details</h3>
 
-<ul>
-    <li>patient id :{{patient.patientId}}</li>
-    <li>first name :{{patient.firstName}}</li>
-    <li>last name :{{patient.lastName}}</li>
-    <li>phone number :{{patient.phoneNumber}}</li>
-    <li>age :{{patient.age}}</li>
-    <li>gender :{{patient.gender}}</li>
-    <li>status :{{patient.status}}</li>
-    <li>createdDate :{{patient.createdDate}}</li>
-    <li>createdBy :{{patient.createdBy}}</li>
-</ul>
-<h3>visits :</h3>
-<table border="1">
-    <tr>
-        <th>patientId</th>
-        <th>visitId</th>
-        <th>status</th>
-        <th>createdDate</th>
-        <th>createdBy</th>
-        <th>updatedBy</th>
-    </tr >
-    <tr *ngFor="let visit of patient.visits">
-        <td>{{visit.patientId}}</td>
-        <td>{{visit.visitId}}</td>
-        <td>{{visit.status}}</td>
-        <td>{{visit.createdDate}}</td>
-        <td>{{visit.createdBy}}</td>
-        <td>{{visit.updatedBy}}</td>
-    </tr>
-</table>
-<button type="button" (click)="deletePatient(patient.patientId)">delete patient</button>
-<button type="button" (click)="updatePatient(patient.patientId)"> update Student</button>
-<button type="button" (click)="goToAllPatients()">all patients</button>
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title> Login Page </title>  
+<style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: pink;  
+}  
+button {   
+       background-color: #4CAF50;   
+       width: 33%;  
+        color: orange;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+         #delete{   
+       background-color: #def664;   
+       width: 33%;  
+        color: orange;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+         #update{   
+       background-color: #f8a5e9;   
+       width: 33%;  
+        color: orange;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        border: 3px solid #f1f1f1;   
+    }   
+ input[type=text], input[type=password] {   
+        width: 100%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+    }  
+ button:hover {   
+        opacity: 0.7;   
+    }   
+  .cancelbtn {   
+        width: auto;   
+        padding: 10px 18px;  
+        margin: 10px 5px;  
+    }   
+        
+     
+ .container {   
+        padding: 25px;   
+        background-color: lightblue;  
+    }   
+</style>   
+</head>    
+<body>    
+    <div class="container">   
+        <h1 style="text-align: center;"> {{patient.fullName}} details</h1>  
+            <ul>
+                <li>patient id :{{patient.patientId}}</li>
+                <li>first name :{{patient.firstName}}</li>
+                <li>last name :{{patient.lastName}}</li>
+                <li>phone number :{{patient.phoneNumber}}</li>
+                <li>age :{{patient.age}}</li>
+                <li>gender :{{patient.gender}}</li>
+                <li>status :{{patient.status}}</li>
+                <li>createdDate :{{patient.createdDate}}</li>
+                <li>createdBy :{{patient.createdBy}}</li>
+            </ul>
+            <h3>visits :</h3>
+            <table border="1">
+                <tr>
+                    <th>patientId</th>
+                    <th>visitId</th>
+                    <th>status</th>
+                    <th>createdDate</th>
+                    <th>createdBy</th>
+                    <th>updatedBy</th>
+                </tr >
+                <tr *ngFor="let visit of patient.visits">
+                    <td>{{visit.patientId}}</td>
+                    <td>{{visit.visitId}}</td>
+                    <td>{{visit.status}}</td>
+                    <td>{{visit.createdDate}}</td>
+                    <td>{{visit.createdBy}}</td>
+                    <td>{{visit.updatedBy}}</td>
+                </tr>
+            </table>
+            <button type="button" id="delete" (click)="deletePatient(patient.patientId)">delete patient</button>
+            <button type="button" id="update" (click)="updatePatient(patient.patientId)"> update Student</button>
+            <button type="button" id="delete"(click)="goToAllPatients()">all patients</button>
+        </div>   
+</body>     
+</html>  
