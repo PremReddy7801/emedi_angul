@@ -14,10 +14,10 @@ export class PatientsServiceService {
   token:String="";
   tokens:Tokens= new Tokens();
 
-  private PatientsBaseUrl:string = 'http://localhost:8090/medi/patient';
-  private frontDeskBaseUrl:string = 'http://localhost:8090/emedi/frontdesk';
-  // private PatientsBaseUrl:string = 'https://emedi.herokuapp.com/medi/patient';
-  // private frontDeskBaseUrl:string = 'https://emedi.herokuapp.com/emedi/frontdesk';
+  // private PatientsBaseUrl:string = 'http://localhost:8090/medi/patient';
+  // private frontDeskBaseUrl:string = 'http://localhost:8090/emedi/frontdesk';
+  private PatientsBaseUrl:string = 'https://emedi.herokuapp.com/medi/patient';
+  private frontDeskBaseUrl:string = 'https://emedi.herokuapp.com/emedi/frontdesk';
   private getallUrl:string = this.PatientsBaseUrl+'/get-all-patients'
   private getOnePatientlUrl:string = this.PatientsBaseUrl+'/get-patient-by-id/'
   private postUrl:string =this.PatientsBaseUrl+'/add-patient'
